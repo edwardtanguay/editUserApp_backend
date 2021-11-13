@@ -6,7 +6,9 @@ const port = 3016;
 const mongoConnectString = 'mongodb://localhost:27017';
 const client = new MongoClient(mongoConnectString);
 
-const execMongo= async (done) => {
+app.use(express.json());
+
+const execMongo = async (done) => {
 	await client.connect();
 	const db = client.db('api001');
 	done(db);
@@ -30,6 +32,16 @@ app.delete('/delete/:id', (req, res) => {
 		const deleteResult = await db.collection('users100').deleteOne({ _id: new mongodb.ObjectId(id) });
 		res.json({
 			result: deleteResult
+		});
+	});
+});
+
+app.post('/insert', (req, res) => {
+	const user = req.body.user;
+	execMongo(async (db) => {
+		const insertResult = await db.collection('users100').insertOne(user);
+		res.json({
+			result: insertResult 
 		});
 	});
 });

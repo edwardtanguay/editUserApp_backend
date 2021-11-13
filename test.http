@@ -8,4 +8,16 @@ content-type: application/json
 DELETE  {{url}}/delete/618ff8342f581f201adc2be3
 content-type: application/json
 
+### insert user 
+POST  {{url}}/insert
+content-type: application/json
+
+{
+	"user": {
+		"name": "Angie Additive",
+		"username": "angie_additive",
+		"email": "angie@hotmail.com"
+	}
+}
+
 
