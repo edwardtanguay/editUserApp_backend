@@ -1,4 +1,11 @@
-### root
-GET http://localhost:3016
+@url = http://localhost:3016 
+
+### show all users 
+GET {{url}} 
 content-type: application/json
+
+### delete user 
+DELETE  {{url}}/delete/618ff8342f581f201adc2be3
+content-type: application/json
+
 
