@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 	});
 });
 
-app.delete('/delete/:id', (req, res) => {
+app.delete('/deleteuser/:id', (req, res) => {
 	const id = req.params.id;
 	execMongo(async (db) => {
 		const deleteResult = await db.collection('users100').deleteOne({ _id: new mongodb.ObjectId(id) });
@@ -36,12 +36,27 @@ app.delete('/delete/:id', (req, res) => {
 	});
 });
 
-app.post('/insert', (req, res) => {
+app.post('/insertuser', (req, res) => {
 	const user = req.body.user;
 	execMongo(async (db) => {
 		const insertResult = await db.collection('users100').insertOne(user);
 		res.json({
 			result: insertResult 
+		});
+	});
+});
+
+app.patch('/edituseremail/:id', (req, res) => {
+	const id = req.params.id;
+	const email = req.body.email;
+	res.json({
+		id,
+		email
+	});
+	execMongo(async (db) => {
+		const updateResult = await db.collection('users100').updateOne({ _id: new mongodb.ObjectId(id) }, { $set: { email } });
+		res.json({
+			result: updateResult 
 		});
 	});
 });

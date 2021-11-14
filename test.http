@@ -5,11 +5,11 @@ GET {{url}}
 content-type: application/json
 
 ### delete user 
-DELETE  {{url}}/delete/618ff8342f581f201adc2be3
+DELETE  {{url}}/deleteuser/618ff8342f581f201adc2be3
 content-type: application/json
 
 ### insert user 
-POST  {{url}}/insert
+POST  {{url}}/insertuser
 content-type: application/json
 
 {
@@ -18,6 +18,14 @@ content-type: application/json
 		"username": "angie_additive",
 		"email": "angie@hotmail.com"
 	}
+}
+
+### edit user 
+PATCH  {{url}}/edituseremail/618ff8342f581f201adc2be4
+content-type: application/json
+
+{
+	"email": "newemail@gmail.com"
 }
 
 
