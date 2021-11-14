@@ -5,7 +5,7 @@ This is the backend for a Heroku app which accesses an Atlas MongoDB database an
 ## Setup
 
 - `npm i`
-- `npm run backend`
+- `npm start`
 
 ## Test
 
