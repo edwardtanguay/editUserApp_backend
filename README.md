@@ -1,6 +1,8 @@
 #  manageUserAppBackend
 
-This is the backend for a Heroku app which accesses an Atlas MongoDB database and exposes CRUD endpoints for a create-react-app also hosted at Heroku (see editUserApp_frontend).
+This is the backend for a user-management app that has a create-react-app frontend and Node/Express API backend that carries out CRUD operations.
+
+See also the [frontend](https://github.com/edwardtanguay/manageUserAppFrontend).
 
 ## Setup
 
