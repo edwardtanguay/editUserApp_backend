@@ -8,6 +8,7 @@ See also the [frontend](https://github.com/edwardtanguay/manageUserAppFrontend).
 
 - `npm i`
 - `npm start`
+- install and start the [frontend](https://github.com/edwardtanguay/manageUserAppFrontend) 
 
 ## Test
 
